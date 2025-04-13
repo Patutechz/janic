@@ -1,6 +1,7 @@
+import MyFooter from "../components/MyFooter.jsx";
 const Contact = () => {
     return ( <>
-        <section className="hero has-text-centered is-halfheight">
+        <section className="hero has-text-centered is-halfheight is-primary">
           <div className="hero-body">
             <div className="container">
               <div className="columns is-centered">
@@ -82,7 +83,7 @@ const Contact = () => {
             </div>
             <div className="column is-5 is-offset-1">
               <h1 className="title">Contact Info</h1>
-              <div className="mb-4">
+              <div className="mb-4 is-hidden">
                 <p className="title is-5 has-text-dark">Address</p>
                 <p className="subtitle is-6 has-text-grey">
                   33 street Rumuodara, Port
@@ -92,13 +93,12 @@ const Contact = () => {
               <div className="mb-4">
                 <p className="title is-5 has-text-dark">Email Us</p>
                 <p className="subtitle is-6 has-text-grey">
-                  info@patutek.com
+                admin@janicexpress.com
                 </p>
               </div>
               <div className="mb-4">
                 <p className="title is-5 has-text-dark">Call Us</p>
-                <p className="subtitle is-6 has-text-grey mb-1">+2341234567890</p>
-                <p className="subtitle is-6 has-text-grey">+2341234567890</p>
+                <p className="subtitle is-6 has-text-grey mb-1">+1 (314) 333 7456</p>
               </div>
               <div className="mb-4">
                 <p className="title is-5 has-text-dark">Follow Us</p>
@@ -122,7 +122,7 @@ const Contact = () => {
                     </span>
                   </a>
                   <a
-                    href="https://bit.ly/patutek"
+                    href="#"
                     className="button  is-primary is-outlinedd"
                     style={{borderRadius : "9999px"}}
                   >
@@ -136,6 +136,7 @@ const Contact = () => {
           </div>
         </div>
       </section>
+      <MyFooter />
     </> );
 }
  

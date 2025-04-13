@@ -49,7 +49,7 @@ const Navbar = () => {
                 Contact
               </Link>
 
-              <span className="navbar-item has-text-weight-semibold is-hidden-mobile">
+              {/* <span className="navbar-item has-text-weight-semibold is-hidden-mobile">
                 |
               </span>
               <Link className="navbar-item has-text-weight-semibold" to="/consignments/create">
@@ -64,21 +64,21 @@ const Navbar = () => {
                 to="/login"
               >
                 Sign In
-              </Link>
+              </Link> */}
               {/* <Link
                     className="navbar-item has-text-weight-semibold"
                     to="/signup"
                   >
                     Register
                   </Link> */}
-              <div className="navbar-item">
+              {/* <div className="navbar-item">
                 <Link
                   className="button is-outlinedd is-primary is-fullwidth has-text-weight-semibold"
                   to="/signup"
                 >
                   <span>Register</span>
                 </Link>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

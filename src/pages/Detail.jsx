@@ -52,7 +52,6 @@ const Detail = () => {
   const [status, setStatus] = useState("");
   const [consignment_id, setConsignment_id] = useState("");
 
-
   useEffect(() => {
     const fetchConsignment = async () => {
       const { data, error } = await supabase
@@ -91,7 +90,10 @@ const Detail = () => {
 
   useEffect(() => {
     const fetchTrackings = async () => {
-      const { data, error } = await supabase.from("trackings").select();
+      const { data, error } = await supabase
+        .from("trackings")
+        .select()
+        .eq("consignment_id", id);
 
       if (error) {
         setFetchError("Could not fetch Trackings");
@@ -125,11 +127,10 @@ const Detail = () => {
 
           {fetchError && <p>{fetchError}</p>}
 
-
-          <table class="table is-striped is-hoverable is-bordered is-fullwidth table-container">
-            <thead class="has-background-dark has-text-white">
+          <table className="table is-striped is-hoverable is-bordered is-fullwidth table-container">
+            <thead className="has-background-dark has-text-white">
               <tr>
-                <th class=" has-text-white">Sender Details</th>
+                <th className=" has-text-white">Sender Details</th>
                 <th></th>
               </tr>
             </thead>
@@ -153,10 +154,10 @@ const Detail = () => {
             </tbody>
           </table>
 
-          <table class="table is-striped is-hoverable is-bordered is-fullwidth">
-            <thead class="has-background-dark has-text-white">
+          <table className="table is-striped is-hoverable is-bordered is-fullwidth">
+            <thead className="has-background-dark has-text-white">
               <tr>
-                <th class=" has-text-white">Reciever Details</th>
+                <th className=" has-text-white">Reciever Details</th>
                 <th></th>
               </tr>
             </thead>
@@ -180,20 +181,21 @@ const Detail = () => {
             </tbody>
           </table>
 
-          <h1 class="is-size-3 has-text-centered">Package Details</h1>
+          <h1 className="is-size-3 has-text-centered">Package Details</h1>
+          <div className="box table-container">
           <table
             id="example"
-            class="table is-striped is-hoverable is-fullwidth is-bordered table-container"
+            className="table is-striped is-hoverable is-fullwidth is-borderedd"
           >
-            <thead class="has-background-dark has-text-white">
+            <thead className="has-background-dark has-text-white">
               <tr>
-                <th class=" has-text-white">Tracking Number</th>
-                <th class=" has-text-white">Item</th>
-                <th class=" has-text-white">weight</th>
-                <th class=" has-text-white">Origin</th>
-                <th class=" has-text-white">Destination</th>
-                <th class=" has-text-white">Reference</th>
-                <th class=" has-text-white">Estimated Delivery Date</th>
+                <th className=" has-text-white">Tracking Number</th>
+                <th className=" has-text-white">Item</th>
+                <th className=" has-text-white">weight</th>
+                <th className=" has-text-white">Origin</th>
+                <th className=" has-text-white">Destination</th>
+                <th className=" has-text-white">Reference</th>
+                <th className=" has-text-white">Estimated Delivery Date</th>
               </tr>
             </thead>
             <tbody>
@@ -208,11 +210,13 @@ const Detail = () => {
               </tr>
             </tbody>
           </table>
+          </div>
 
-          <h1 class="is-size-3 has-text-centered">Cargo Information</h1>
+          <h1 className="is-size-3 has-text-centered">Cargo Information</h1>
+          <div className="box table-container">
           <table
             id="example"
-            class="table is-striped is-hoverable is-fullwidth is-bordered"
+            className="table is-striped is-hoverable is-fullwidth is-borderedd"
           >
             <thead>
               <tr>
@@ -225,7 +229,7 @@ const Detail = () => {
             <tbody>
               {trackings &&
                 trackings.map((tracking) => (
-                  <tr>
+                  <tr key={tracking.id}>
                     <td>{tracking.time}</td>
                     <td>{tracking.date}</td>
                     <td>{tracking.location}</td>
@@ -234,6 +238,7 @@ const Detail = () => {
                 ))}
             </tbody>
           </table>
+          </div>
         </div>
       </section>
       {/* <h1 className="title">{consignment.tracking_number}</h1> */}

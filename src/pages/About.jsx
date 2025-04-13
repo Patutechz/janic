@@ -1,7 +1,8 @@
 import AboutUs from "../assets/img/ship-6794508_1280.jpg";
+import MyFooter from "../components/MyFooter.jsx";
 const About = () => {
     return ( <>
-        <section class="hero has-text-centered is-halfheight">
+        <section class="hero has-text-centered is-halfheight is-primary">
           <div class="hero-body">
             <div class="container">
               <div class="columns is-centered">
@@ -24,7 +25,7 @@ const About = () => {
                 style={{width: "48px", height: "4px"}}
               />
               <p className="subtitle">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo aliquid distinctio quis, tempore modi impedit ducimus incidunt in minima odit officia, debitis laboriosam delectus deleniti sequi voluptas iusto esse ipsa.
+                Janic Express is the world's leading logistics company. With Over 200,000 people in over 220 countires and territories work every day to help you cross borders, reach new markets and grwo your business. Oe simple send a letter to your loved ones
               </p>
             </div>
             <div className="column is-5 is-offset-1">
@@ -35,6 +36,7 @@ const About = () => {
           </div>
         </div>
       </section>
+      <MyFooter />
     </> );
 }
  

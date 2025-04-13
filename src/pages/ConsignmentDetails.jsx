@@ -49,7 +49,7 @@ const ConsignmentDetails = () => {
     }
     if (data) {
       console.log(data);
-      Swal.fire('Good Job!', 'Tracking Deleted Succesfully', "success")
+      Swal.fire("Good Job!", "Tracking Deleted Succesfully", "success");
       navigate("/consignments/user");
     }
   };
@@ -82,7 +82,7 @@ const ConsignmentDetails = () => {
     if (data) {
       console.log(data);
       setFormError(null);
-      Swal.fire('Good Job!', 'Tracking Added Succesfully', "success")
+      Swal.fire("Good Job!", "Tracking Added Succesfully", "success");
       navigate("/consignments/user");
     }
   };
@@ -125,7 +125,10 @@ const ConsignmentDetails = () => {
 
   useEffect(() => {
     const fetchTrackings = async () => {
-      const { data, error } = await supabase.from("trackings").select();
+      const { data, error } = await supabase
+        .from("trackings")
+        .select()
+        .eq("consignment_id", id);
 
       if (error) {
         setFetchError("Could not fetch Trackings");
@@ -150,7 +153,7 @@ const ConsignmentDetails = () => {
             <div className="level-left">
               <div className="level-item">
                 <h1 className="title is-4 is-hiddenn is-centered-mobile">
-                  Consignment Details{" "}
+                  Consignment Details
                   <span className="has-text-grey">#{tracking_number}</span>
                 </h1>
               </div>
@@ -167,10 +170,10 @@ const ConsignmentDetails = () => {
 
           {fetchError && <p>{fetchError}</p>}
 
-          <table class="table is-striped is-hoverable is-bordered is-fullwidth table-container">
-            <thead class="has-background-dark has-text-white">
+          <table className="table is-striped is-hoverable is-bordered is-fullwidth table-container">
+            <thead className="has-background-dark has-text-white">
               <tr>
-                <th class=" has-text-white">Sender Details</th>
+                <th className=" has-text-white">Sender Details</th>
                 <th></th>
               </tr>
             </thead>
@@ -194,10 +197,10 @@ const ConsignmentDetails = () => {
             </tbody>
           </table>
 
-          <table class="table is-striped is-hoverable is-bordered is-fullwidth">
-            <thead class="has-background-dark has-text-white">
+          <table className="table is-striped is-hoverable is-bordered is-fullwidth">
+            <thead className="has-background-dark has-text-white">
               <tr>
-                <th class=" has-text-white">Reciever Details</th>
+                <th className=" has-text-white">Reciever Details</th>
                 <th></th>
               </tr>
             </thead>
@@ -221,70 +224,79 @@ const ConsignmentDetails = () => {
             </tbody>
           </table>
 
-          <h1 class="is-size-3 has-text-centered">Package Details</h1>
-          <table
-            id="example"
-            class="table is-striped is-hoverable is-fullwidth is-bordered"
-          >
-            <thead class="has-background-dark has-text-white">
-              <tr>
-                <th class=" has-text-white">#</th>
-                <th class=" has-text-white">Tracking Number</th>
-                <th class=" has-text-white">Item</th>
-                <th class=" has-text-white">weight</th>
-                <th class=" has-text-white">Origin</th>
-                <th class=" has-text-white">Destination</th>
-                <th class=" has-text-white">Reference</th>
-                <th class=" has-text-white">Estimated Delivery Date</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>{id}</td>
-                <td>{tracking_number}</td>
-                <td>{item}</td>
-                <td>{weight}</td>
-                <td>{origin}</td>
-                <td>{destination}</td>
-                <td>{reference}</td>
-                <td>{estimated_date}</td>
-              </tr>
-            </tbody>
-          </table>
+          <h1 className="is-size-3 has-text-centered">Package Details</h1>
+          <div className="box table-container">
+            <table
+              id="example"
+              className="table is-striped is-hoverable is-fullwidth is-borderedd"
+            >
+              <thead className="has-background-dark has-text-white">
+                <tr>
+                  <th className=" has-text-white">#</th>
+                  <th className=" has-text-white">Tracking Number</th>
+                  <th className=" has-text-white">Item</th>
+                  <th className=" has-text-white">weight</th>
+                  <th className=" has-text-white">Origin</th>
+                  <th className=" has-text-white">Destination</th>
+                  <th className=" has-text-white">Reference</th>
+                  <th className=" has-text-white">Estimated Delivery Date</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>{id}</td>
+                  <td>{tracking_number}</td>
+                  <td>{item}</td>
+                  <td>{weight}</td>
+                  <td>{origin}</td>
+                  <td>{destination}</td>
+                  <td>{reference}</td>
+                  <td>{estimated_date}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
 
-          <h1 class="is-size-3 has-text-centered">Cargo Information</h1>
-          <table
-            id="example"
-            class="table is-striped is-hoverable is-fullwidth is-bordered"
-          >
-            <thead>
-              <tr>
-                <th>#</th>
-                <th>Time</th>
-                <th>Date</th>
-                <th>Location</th>
-                <th>Status</th>
-                <th>Actions</th>
-              </tr>
-            </thead>
-            <tbody>
-              {trackings &&
-                trackings.map((tracking) => (
-                  <tr>
-                    <td>{tracking.id}</td>
-                    <td>{tracking.time}</td>
-                    <td>{tracking.date}</td>
-                    <td>{tracking.location}</td>
-                    <td>{tracking.status}</td>
-                    <td>
-                      <div className="buttons">
-                        <button className="button"  onClick={() => handleDelete(tracking.id)}>Delete</button>
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-            </tbody>
-          </table>
+          <h1 className="is-size-3 has-text-centered">Cargo Information</h1>
+          <div className="box table-container">
+            <table
+              id="example"
+              className="table is-striped is-hoverable is-fullwidth is-borderedd"
+            >
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Time</th>
+                  <th>Date</th>
+                  <th>Location</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                {trackings &&
+                  trackings.map((tracking) => (
+                    <tr key={tracking.id}>
+                      <td>{tracking.id}</td>
+                      <td>{tracking.time}</td>
+                      <td>{tracking.date}</td>
+                      <td>{tracking.location}</td>
+                      <td>{tracking.status}</td>
+                      <td>
+                        <div className="buttons">
+                          <button
+                            className="button"
+                            onClick={() => handleDelete(tracking.id)}
+                          >
+                            Delete
+                          </button>
+                        </div>
+                      </td>
+                    </tr>
+                  ))}
+              </tbody>
+            </table>
+          </div>
 
           <div className="columns is-centered is-vcenteredd">
             <div className="column is-12-tablet is-12-desktop is-12-widescreen">
