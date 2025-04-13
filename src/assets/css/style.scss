@@ -1,0 +1,99 @@
+@charset 'utf-8';
+$slate-50 : #f8fafc;
+$slate-100 : #f1f5f9;
+$slate-200 : #e2e8f0;
+$slate-300 : #cbd5e1;
+$slate-400 : #94a3b8;
+$slate-500 : #64748b;
+$slate-600 : #475569;
+$slate-700 : #334155;
+$slate-800 : #1e293b;
+$slate-900 : #0f172a;
+$slate-950: #020617;
+
+$violet-50 : #f5f3ff;
+$violet-100 : #ede9fe;
+$violet-200 : #ddd6fe;
+$violet-300 : #c4b5fd;
+$violet-400 : #a78bfa;
+$violet-500 : #8b5cf6;
+$violet-600 : #7c3aed;
+$violet-700 : #6d28d9;
+$violet-800 : #5b21b6;
+$violet-900 : #4c1d95;
+$violet-950 : #2e1065;
+
+$turquoise: $violet-500;
+$blue: $violet-500;
+
+@import "../../../node_modules/bulma/sass/utilities/initial-variables";
+
+
+$black-bis:    $slate-900;
+$black-ter:    $slate-800;
+
+$grey-darker:  $slate-700;
+$grey-dark:    $slate-600;
+$grey:         $slate-500;
+$grey-light:   $slate-400;
+$grey-lighter: $slate-300;
+$grey-lightest: $slate-200;
+
+$white-ter:    $slate-100;
+$white-bis:    $slate-50;
+
+$body-background-color: $white-bis;
+
+$control-border-width: 2px;
+
+@import '../../../node_modules/bulma/bulma';
+.button.is-outlined {
+  border-width: 2px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+::selection {
+  background-color: $violet-500;
+  color : white;
+}
+
+.container.is-narrow {
+  max-width: 1200px;
+}
+
+.bg-gradient {
+  background-image: linear-gradient(180deg, rgba(255, 255, 255, 0.15), rgba(255, 255, 255, 0)) !important;
+}
+
+.is-text-excerpt{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+}
+
+@font-face { 
+  font-family: 'MyFont'; 
+  src: url('../css/fonts/Actay-Regular.otf') format('opentype'); 
+  font-weight: normal; 
+  font-style: normal; 
+} 
+
+@font-face { 
+  font-family: 'MyFont'; 
+  src: url('../css/fonts/ActayWide-Bold.otf') format('opentype'); 
+  font-weight: bold; 
+  font-style: bold; 
+} 
+  
+* { 
+  font-family: 'MyFont'; 
+  /* text-align: center;  */
+} 
