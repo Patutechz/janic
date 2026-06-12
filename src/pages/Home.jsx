@@ -117,7 +117,7 @@ const Home = () => {
                       style={{ borderRadius:"6px 0 0 6px", border:"none", fontSize:"0.95rem" }} />
                   </div>
                   <div className="control">
-                    <button className="button is-primary is-medium has-text-weight-bold"
+                    <button className="button is-primary is-mediumm has-text-weight-bold"
                       style={{ borderRadius:"0 6px 6px 0" }} disabled={loading}>
                       {loading
                         ? <span className="icon"><i className="fas fa-spinner fa-spin" /></span>
@@ -128,7 +128,7 @@ const Home = () => {
               </form>
 
               <div className="buttons">
-                <Link to="/services" className="button is-outlined has-text-white has-text-weight-semibold"
+                <Link to="/services" className="button is-outlined has-text-weight-semibold"
                   style={{ borderColor:"rgba(255,255,255,0.3)", borderRadius:"6px" }}>
                   Our Services
                 </Link>
@@ -146,7 +146,7 @@ const Home = () => {
                 {[
                   { icon:"fa-check-circle", color:"#4ade80", text:"Real-Time Tracking"  },
                   { icon:"fa-shield-alt",   color:"#a78bfa", text:"Fully Insured"        },
-                  { icon:"fa-headset",      color:"#60a5fa", text:"24/7 Live Support"    },
+                  // { icon:"fa-headset",      color:"#60a5fa", text:"24/7 Live Support"    },
                 ].map(b => (
                   <div key={b.text} style={{ display:"flex", alignItems:"center", gap:"0.75rem", padding:"0.6rem 0", borderTop:"1px solid rgba(255,255,255,0.06)" }}>
                     <i className={`fas ${b.icon}`} style={{ color:b.color, fontSize:"1.1rem", width:"20px", textAlign:"center" }} />
