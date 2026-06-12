@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import supabase from "../config/supabaseClient";
-const ConsignmentCard = ({ consignment, onDelete }) => {
+const ConsignmentCard = ({ consignment, onDelete }) => { 
 
   const handleDelete = async () => {
     const { data, error } = await supabase

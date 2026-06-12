@@ -1,90 +1,65 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
-
-// import avatar from "../assets/img/avatar.jpg";
+import { useState } from "react"
+import { Link, NavLink } from "react-router-dom"
 
 const Navbar = () => {
-  const [navbarOpen, setNavbarOpen] = useState(false);
+  const [open, setOpen] = useState(false)
+  const close = () => setOpen(false)
+
+  const linkCls = ({ isActive }) =>
+    "navbar-item has-text-weight-semibold" + (isActive ? " has-text-primary" : "")
 
   return (
-    <>
-      <nav className="navbar is-transparent is-light has-background-white has-shadow">
-        <div className="container">
-          <div className="navbar-brand">
-            <Link className="navbar-item  has-background-primaryy" to="/">
-              <span className="title is-size-4 has-text-weight-bold has-text-whitee">
-                Ja<span className="has-text-primary">nic</span>
-              </span>
-            </Link>
-            <span
-              className={"navbar-burger" + (navbarOpen ? " is-active" : " ")}
-              onClick={() => setNavbarOpen(!navbarOpen)}
-            >
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
-              <span aria-hidden="true"></span>
+    <nav
+      className="navbar is-transparent has-background-white has-shadow"
+      style={{ position: "sticky", top: 0, zIndex: 100 }}
+    >
+      <div className="container">
+        <div className="navbar-brand">
+          <Link className="navbar-item" to="/" onClick={close}>
+            <span className="has-text-weight-bold" style={{ fontSize: "1.25rem", letterSpacing: "-0.5px" }}>
+              Janic<span className="has-text-primary">World</span>
+              <span className="has-text-grey-dark" style={{ fontWeight: 400 }}>Wide</span>
             </span>
-          </div>
-          <div
-            className={
-              "navbar-menu has-text-centered" +
-              (navbarOpen ? " is-active" : " ")
-            }
+          </Link>
+          <span
+            className={"navbar-burger" + (open ? " is-active" : "")}
+            onClick={() => setOpen(!open)}
+            style={{ cursor: "pointer" }}
           >
-            <div className="navbar-start"></div>
-            <div className="navbar-end">
-              <Link className="navbar-item has-text-weight-semibold" to="/">
-                Track Order
-              </Link>
-              <Link
-                className="navbar-item has-text-weight-semibold"
-                to="/about"
-              >
-                About
-              </Link>
-              <Link
-                className="navbar-item has-text-weight-semibold"
-                to="/contact"
-              >
-                Contact
-              </Link>
+            <span /><span /><span />
+          </span>
+        </div>
 
-              {/* <span className="navbar-item has-text-weight-semibold is-hidden-mobile">
-                |
-              </span>
-              <Link className="navbar-item has-text-weight-semibold" to="/consignments/create">
-                Create Consignment
-              </Link>
-
-              <Link className="navbar-item has-text-weight-semibold" to="/consignments/user">
-                Consignments
-              </Link>
+        <div className={"navbar-menu" + (open ? " is-active" : "")}>
+          <div className="navbar-start" />
+          <div className="navbar-end" style={{ alignItems: "center" }}>
+            {[
+              { to: "/",        label: "Home",     end: true },
+              { to: "/services",label: "Services"           },
+              { to: "/track",   label: "Track"              },
+              { to: "/about",   label: "About"              },
+              { to: "/faq",     label: "FAQ"                },
+              { to: "/contact", label: "Contact"            },
+            ].map(({ to, label, end }) => (
+              <NavLink key={to} className={linkCls} to={to} end={end} onClick={close}>
+                {label}
+              </NavLink>
+            ))}
+            <div className="navbar-item">
               <Link
-                className="navbar-item has-text-weight-semibold"
-                to="/login"
+                className="button is-primary has-text-weight-semibold"
+                to="/quote"
+                onClick={close}
+                style={{ borderRadius: "6px" }}
               >
-                Sign In
-              </Link> */}
-              {/* <Link
-                    className="navbar-item has-text-weight-semibold"
-                    to="/signup"
-                  >
-                    Register
-                  </Link> */}
-              {/* <div className="navbar-item">
-                <Link
-                  className="button is-outlinedd is-primary is-fullwidth has-text-weight-semibold"
-                  to="/signup"
-                >
-                  <span>Register</span>
-                </Link>
-              </div> */}
+                Get a Quote
+              </Link>
             </div>
           </div>
         </div>
-      </nav>
-    </>
-  );
-};
+      </div>
+    </nav>
+  )
+}
 
-export default Navbar;
+export default Navbar

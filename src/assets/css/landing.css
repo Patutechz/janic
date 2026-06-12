@@ -1,0 +1,145 @@
+/* ── JanicExpress Landing Page Supplement ─────────────── */
+/* This file works alongside the compiled Bulma SCSS.      */
+/* Violet-600 = #7c3aed  |  Slate-800 = #1e293b           */
+
+/* ── inputs / focus ─────────────────────────────────────── */
+input:focus, textarea:focus, select:focus {
+  border-color: #7c3aed !important;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(124,58,237,0.12) !important;
+}
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button { -webkit-appearance: none; margin: 0; }
+input[type=number] { -moz-appearance: textfield; }
+input[type=date] { -webkit-appearance: none; appearance: none; }
+
+/* ── links & transitions ─────────────────────────────────── */
+a { transition: color 0.2s; }
+.navbar-item { transition: color 0.2s; }
+
+/* ── box card ────────────────────────────────────────────── */
+.box { transition: transform 0.25s ease, box-shadow 0.25s ease, border-top-color 0.25s ease; }
+
+/* ── navbar ──────────────────────────────────────────────── */
+.navbar { position: sticky; top: 0; z-index: 100; }
+.navbar.has-shadow { box-shadow: 0 2px 12px rgba(0,0,0,0.09) !important; }
+
+/* ── hero backgrounds ────────────────────────────────────── */
+.jn-hero {
+  background: linear-gradient(135deg, #1e293b 0%, #312e81 55%, #4c1d95 100%);
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 1.5rem;
+}
+.jn-hero-inner {
+  background: linear-gradient(135deg, #1e293b 0%, #312e81 100%);
+  padding: 5rem 1.5rem 3.5rem;
+  position: relative;
+  overflow: hidden;
+}
+.jn-hero-blob {
+  position: absolute;
+  top: -80px; right: -80px;
+  width: 380px; height: 380px;
+  background: rgba(139,92,246,0.1);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+/* ── stats bar ───────────────────────────────────────────── */
+.jn-stats-bar { background: #7c3aed; padding: 1.25rem 1.5rem; }
+.jn-stats-bar .jn-stat-val { font-weight: 900; font-size: 2rem; color: #fff; line-height: 1; }
+.jn-stats-bar .jn-stat-lbl { font-size: 0.68rem; text-transform: uppercase; letter-spacing: 1.5px; color: #ddd6fe; margin-top: 0.25rem; }
+
+/* ── photo banners ───────────────────────────────────────── */
+.jn-photo-banner { position: relative; overflow: hidden; }
+.jn-photo-banner img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.jn-photo-overlay {
+  position: absolute; inset: 0;
+  background: rgba(15,23,42,0.72);
+  display: flex; align-items: center; justify-content: center;
+  flex-direction: column; text-align: center; padding: 1.5rem;
+}
+
+/* ── service big card ────────────────────────────────────── */
+.jn-service-card { background: #fff; border-radius: 10px; overflow: hidden; height: 100%; display: flex; flex-direction: column; box-shadow: 0 2px 10px rgba(0,0,0,0.06); }
+.jn-service-card-head { background: #1e293b; padding: 1.6rem; display: flex; align-items: center; gap: 1rem; }
+.jn-service-card-icon { width: 48px; height: 48px; background: rgba(139,92,246,0.15); border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.3rem; }
+
+/* ── FAQ accordion ───────────────────────────────────────── */
+.jn-faq-item { border-bottom: 1px solid #e2e8f0; }
+.jn-faq-q { display: flex; justify-content: space-between; align-items: center; cursor: pointer; padding: 1.35rem 0; gap: 1rem; }
+.jn-faq-q span { font-weight: 700; font-size: 1rem; color: #1e293b; text-transform: uppercase; letter-spacing: 0.3px; }
+.jn-faq-arrow { transition: transform 0.25s; flex-shrink: 0; }
+.jn-faq-arrow.open { transform: rotate(180deg); }
+.jn-faq-a { overflow: hidden; transition: max-height 0.35s ease; }
+
+/* ── value card ──────────────────────────────────────────── */
+.jn-value-card { display: flex; gap: 1rem; padding: 1.35rem; background: #fff; border-radius: 8px; border-left: 4px solid #7c3aed; margin-bottom: 1rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.jn-value-icon { width: 44px; height: 44px; background: #ede9fe; border-radius: 8px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* ── team avatar ─────────────────────────────────────────── */
+.jn-team-avatar { width: 76px; height: 76px; border-radius: 50%; background: #1e293b; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: 900; font-size: 1.5rem; color: #a78bfa; }
+
+/* ── pricing badge ───────────────────────────────────────── */
+.jn-pricing-badge { position: absolute; top: -1px; right: 1.5rem; background: #7c3aed; color: #fff; font-size: 0.68rem; font-weight: 800; text-transform: uppercase; letter-spacing: 1px; padding: 0.2rem 0.75rem; border-radius: 0 0 6px 6px; }
+
+/* ── booking sidebar ─────────────────────────────────────── */
+.jn-booking-sidebar { position: sticky; top: 90px; }
+
+/* ── CTA banner ──────────────────────────────────────────── */
+.jn-cta { background: #7c3aed; padding: 4.5rem 1.5rem; text-align: center; }
+
+/* ── contact info card ───────────────────────────────────── */
+.jn-contact-card { display: flex; gap: 0.85rem; align-items: flex-start; padding: 1.1rem 1.25rem; background: #fff; border-radius: 8px; margin-bottom: 0.85rem; box-shadow: 0 1px 4px rgba(0,0,0,0.05); }
+.jn-contact-icon { width: 40px; height: 40px; background: #1e293b; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; }
+
+/* ── how-it-works step ───────────────────────────────────── */
+.jn-step-circle { width: 64px; height: 64px; border-radius: 50%; background: rgba(139,92,246,0.15); border: 2px solid rgba(139,92,246,0.3); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.1rem; }
+
+/* ── testimonial ─────────────────────────────────────────── */
+.jn-testimonial { position: relative; }
+.jn-testimonial-quote { font-size: 4.5rem; line-height: 1; color: #ede9fe; position: absolute; top: 0.5rem; left: 1.25rem; font-family: Georgia, serif; pointer-events: none; }
+
+/* ── option toggle (Quote page) ──────────────────────────── */
+.jn-option { display: flex; align-items: center; gap: 1rem; padding: 1rem 1.1rem; border: 2px solid #e2e8f0; border-radius: 8px; margin-bottom: 0.75rem; cursor: pointer; background: #fff; transition: all 0.2s; }
+.jn-option.active { border-color: #7c3aed; background: #f5f3ff; }
+.jn-option-icon { width: 38px; height: 38px; border-radius: 6px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+.jn-option-check { width: 22px; height: 22px; border-radius: 50%; border: 2px solid #cbd5e1; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+.jn-option-check.active { background: #7c3aed; border-color: #7c3aed; }
+
+/* ── stepper ─────────────────────────────────────────────── */
+.jn-stepper { background: #1e293b; border-bottom: 1px solid rgba(255,255,255,0.07); padding: 1rem 1.5rem; overflow-x: auto; scrollbar-width: none; }
+.jn-stepper::-webkit-scrollbar { display: none; }
+.jn-stepper-inner { display: flex; align-items: center; justify-content: center; min-width: max-content; margin: 0 auto; gap: 0.2rem; }
+
+/* ── booking form inputs ─────────────────────────────────── */
+.jn-form-input {
+  display: block; width: 100%; padding: 0.65rem 0.9rem;
+  border: 2px solid #e2e8f0; border-radius: 6px;
+  font-family: inherit; font-size: 0.95rem; color: #1e293b;
+  outline: none; margin-bottom: 1.1rem; box-sizing: border-box;
+  background: #fff; transition: border-color 0.2s;
+}
+.jn-form-input:focus { border-color: #7c3aed; box-shadow: 0 0 0 3px rgba(124,58,237,0.12); }
+.jn-form-label { display: block; font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: #1e293b; margin-bottom: 0.35rem; }
+
+/* ── success pulse ───────────────────────────────────────── */
+@keyframes jn-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0.4); }
+  70%  { box-shadow: 0 0 0 20px rgba(124, 58, 237, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(124, 58, 237, 0); }
+}
+.jn-confirm-icon { animation: jn-pulse 1.5s ease 0.3s 2; border-radius: 50%; display: inline-block; }
+
+/* ── responsive ──────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .jn-hero { min-height: auto !important; padding: 3rem 1.5rem !important; }
+  .jn-hero-inner { padding: 3rem 1.5rem 2rem !important; }
+  .jn-photo-banner { height: 200px !important; }
+  .jn-booking-sidebar { display: none; }
+  .jn-stats-bar .jn-stat-val { font-size: 1.5rem; }
+}
