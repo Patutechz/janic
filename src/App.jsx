@@ -6,9 +6,9 @@ import Home    from "./pages/Home.jsx"
 import About   from "./pages/About.jsx"
 import Contact from "./pages/Contact.jsx"
 import Services from "./pages/Services.jsx"
-import Track   from "./pages/Track.jsx"
+// import Track   from "./pages/Track.jsx"
 import FAQ     from "./pages/FAQ.jsx"
-import Quote   from "./pages/Quote.jsx"
+// import Quote   from "./pages/Quote.jsx"
 
 // App pages (unchanged)
 import Detail            from "./pages/Detail.jsx"
@@ -51,9 +51,9 @@ function App() {
           <Route path="/about"    element={<About />}    />
           <Route path="/contact"  element={<Contact />}  />
           <Route path="/services" element={<Services />} />
-          <Route path="/track"    element={<Track />}    />
+          {/* <Route path="/track"    element={<Track />}    /> */}
           <Route path="/faq"      element={<FAQ />}      />
-          <Route path="/quote"    element={<Quote />}    />
+          {/* <Route path="/quote"    element={<Quote />}    /> */}
 
           {/* App */}
           <Route path="/:id"                 element={<Detail />}             />

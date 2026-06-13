@@ -40,7 +40,7 @@ const Contact = () => {
               </h2>
 
               {[
-                { icon:"fa-map-marker-alt", title:"Head Office",  text:"14 Harbor Drive, Lagos, Nigeria" },
+                // { icon:"fa-map-marker-alt", title:"Head Office",  text:"14 Harbor Drive, Lagos, Nigeria" },
                 // { icon:"fa-phone",          title:"Phone",        text:"+1 (314) 333 7456\n+44 20 7946 0001 (UK)" },
                 { icon:"fa-envelope",       title:"Email",        text:"contact@janicworldwide.com" },
                 { icon:"fa-clock",          title:"Hours",        text:"Mon–Fri: 8:00 AM – 8:00 PM\nSat–Sun: 9:00 AM – 5:00 PM" },

@@ -36,7 +36,7 @@ const Navbar = () => {
             {[
               { to: "/",        label: "Home",     end: true },
               { to: "/services",label: "Services"           },
-              { to: "/track",   label: "Track"              },
+              // { to: "/track",   label: "Track"              },
               { to: "/about",   label: "About"              },
               { to: "/faq",     label: "FAQ"                },
               { to: "/contact", label: "Contact"            },
@@ -45,7 +45,7 @@ const Navbar = () => {
                 {label}
               </NavLink>
             ))}
-            <div className="navbar-item">
+            {/* <div className="navbar-item">
               <Link
                 className="button is-primary has-text-weight-semibold"
                 to="/quote"
@@ -54,7 +54,7 @@ const Navbar = () => {
               >
                 Get a Quote
               </Link>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

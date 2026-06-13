@@ -132,10 +132,10 @@ const Home = () => {
                   style={{ borderColor:"rgba(255,255,255,0.3)", borderRadius:"6px" }}>
                   Our Services
                 </Link>
-                <Link to="/quote" className="button is-primary has-text-weight-semibold"
+                {/* <Link to="/quote" className="button is-primary has-text-weight-semibold"
                   style={{ borderRadius:"6px" }}>
                   Get a Free Quote
-                </Link>
+                </Link> */}
               </div>
             </div>
 
